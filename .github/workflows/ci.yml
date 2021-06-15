@@ -66,7 +66,7 @@ jobs:
         with:
           release: 'app'
           helm: 'helm3'
-          namespace: 'digitalocean-test'
+          namespace: 'test'
           chart: 'k8s/chart'
           token: '${{ github.token }}'
           value-files: 'k8s/chart/values.yaml'
