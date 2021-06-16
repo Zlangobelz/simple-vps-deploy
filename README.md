@@ -7,4 +7,4 @@ helm registry login -u zlangobelz https://ghcr.io
 
 **Port forward:**
 
-`kubectl port-forward {POD} {HOST_PORT}:{CLUSTER_PORT}`
+`kubectl port-forward {POD} {HOST_PORT}:{CLUSTER_PORT}` 
