@@ -83,8 +83,5 @@ jobs:
           chmod go-r $HOME/.kube/config
           echo "KUBECONFIG=$HOME/.kube/config" >> $GITHUB_ENV
 
-      - name: show config
-        run: kubectl config view
-
       - name: Deploy helm chart
         run: helm upgrade app k8s/chart --install --namespace=test --set=app.name=app --values=k8s/chart/values.yaml
