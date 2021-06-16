@@ -60,13 +60,19 @@ jobs:
 
       - name: Install helm
         run: |
-          curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3
-          chmod +x get_helm.sh
-          ./get_helm.sh
-          helm
+          curl -fsSL -o helm_install.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3
+          chmod +x helm_install.sh
+          ./helm_install.sh
+          rm helm_install.sh
 
       - name: Prepare helm
         run: ./k8s/bin/helm-deploy.sh
+
+      - name: Create Kubernetes config file
+        run: |
+          mkdir -p ./.kube
+          touch ./.kube/config
+          echo ${KUBECONFIG} > ./.kube/config
 
       - name: Deploy helm chart
         run: helm upgrade app k8s/chart --install --namespace=test --set=app.name=app --values=k8s/chart/values.yaml
