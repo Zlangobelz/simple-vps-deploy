@@ -84,6 +84,4 @@ jobs:
           echo "KUBECONFIG=~/.kube/config" >> $GITHUB_ENV
 
       - name: Deploy helm chart
-        run: helm upgrade app k8s/chart --install --namespace=test --set=app.name=app --values=k8s/chart/values.yaml
-        env:
-          KUBECONFIG_FILE: '${{ secrets.KUBECONFIG }}'
+        run: echo $KUBECONFIG && helm upgrade app k8s/chart --install --namespace=test --set=app.name=app --values=k8s/chart/values.yaml
