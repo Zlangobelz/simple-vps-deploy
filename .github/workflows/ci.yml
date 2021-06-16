@@ -62,7 +62,8 @@ jobs:
         run: |
           curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/darwin/amd64/kubectl
           chmod +x ./kubectl
-          mv ./kubectl /usr/local/bin/kubectl
+          mkdir -p ~/.local/bin/kubectl
+          mv ./kubectl ~/.local/bin/kubectl
 
       - name: Install helm
         run: |
@@ -76,9 +77,9 @@ jobs:
 
       - name: Create Kubernetes config file
         run: |
-          mkdir -p ./.kube
-          touch ./.kube/config
-          echo ${KUBECONFIG} > ./.kube/config
+          mkdir -p ~/.kube
+          touch ~/.kube/config
+          echo ${KUBECONFIG} > ~/.kube/config
 
       - name: Deploy helm chart
         run: helm upgrade app k8s/chart --install --namespace=test --set=app.name=app --values=k8s/chart/values.yaml
