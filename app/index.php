@@ -8,6 +8,6 @@
     <title>Document</title>
 </head>
 <body>
-    <?php echo 'Hello. this is test project' ?>
+    <?php echo 'Hello. I am v0.1.1' ?>
 </body>
 </html>

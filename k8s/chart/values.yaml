@@ -15,7 +15,6 @@ nginx:
 # App template values
 image:
   repository: ghcr.io/zlangobelz/simple-vps-deploy/php
-  tag: latest
 
 service:
   name: php
