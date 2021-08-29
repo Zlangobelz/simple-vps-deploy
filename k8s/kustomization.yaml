@@ -9,3 +9,7 @@ secretGenerator:
 resources:
   - mysql/mysql-volume.yaml
   - mysql/mysql-deployment.yaml
+  - nginx/nginx-code-volume.yaml
+  - nginx/nginx-configMap.yaml
+  - nginx/nginx-service.yaml
+  - nginx/nginx-deployment.yaml
