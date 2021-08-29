@@ -8,6 +8,6 @@
     <title>Document</title>
 </head>
 <body>
-    <?php echo 'Hello. I am v0.1.1' ?>
+    <?php echo 'Hello. I am v0.1.1. DB host: ' . getenv('DB_HOST') . PHP_EOL . ' DB user: ' . getenv('DB_USER'); ?>
 </body>
 </html>
