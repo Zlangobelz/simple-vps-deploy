@@ -2,3 +2,6 @@ secretGenerator:
   - name: mysql-user-creds
     envs:
       - .env.mysql
+resources:
+  - mysql/mysql-volume.yaml
+  - mysql/mysql-deployment.yaml
