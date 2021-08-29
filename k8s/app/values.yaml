@@ -1,0 +1,22 @@
+# App template values
+image:
+  repository: ghcr.io/zlangobelz/simple-vps-deploy/php
+
+service:
+  name: php
+  type: ClusterIP
+  port: 9000
+
+deployment:
+  containerPort: 9000
+
+replicaCount: 1
+
+imagePullSecrets:
+  - name: ghcr-secret
+
+autoscaling:
+  enabled: true
+  minReplicas: 1
+  maxReplicas: 100
+  targetCPUUtilizationPercentage: 80
