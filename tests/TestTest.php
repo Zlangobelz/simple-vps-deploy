@@ -8,9 +8,9 @@ class TestTest extends \PHPUnit\Framework\TestCase
         $this->assertTrue(2 == $a);
     }
 
-//    public function testIsOneEqualsTwo()
-//    {
-//        $a = 1;
-//        $this->assertTrue(2 == $a);
-//    }
+    public function testIsOneEqualsTwo()
+    {
+        $a = 1;
+        $this->assertTrue(2 == $a);
+    }
 }
