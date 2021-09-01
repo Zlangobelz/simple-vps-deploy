@@ -23,5 +23,6 @@ jobs:
         run: |
           # Change all uppercase to lowercase
           IMAGE_ID=$(echo $IMAGE_ID | tr '[A-Z]' '[a-z]')
+          docker pull $IMAGE_ID:$BUILD_SHA
           docker tag $IMAGE_ID:$BUILD_SHA $IMAGE_ID:$RELEASE_VERSION
           docker push $IMAGE_ID:$RELEASE_VERSION
