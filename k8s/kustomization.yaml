@@ -6,6 +6,10 @@ secretGenerator:
   - name: mysql-user-creds
     envs:
       - .env.mysql
+  - name: ghcr-secret
+    files:
+      - .dockerconfigjson
+    type: kubernetes.io/dockerconfigjson
 resources:
   - mysql/mysql-volume.yaml
   - mysql/mysql-deployment.yaml
