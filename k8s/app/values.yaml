@@ -4,7 +4,7 @@ image:
 
 service:
   name: php
-  type: ClusterIP
+  type: NodePort
   port: 9000
 
 deployment:
